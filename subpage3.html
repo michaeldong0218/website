@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <title>Nutrition</title>
+    </head>
+    <style>
+        body
+        {
+            background-color: #4C9F38;
+        }
+        h1
+        {
+            text-align: center;
+            color: white;
+            padding-top: 90px;
+            padding-bottom: 90px;
+            font-size: 100px;
+        }
+        .buttoncontainer
+            {
+                padding-top: 200px;
+                padding-bottom: 50px;
+                grid-template-columns: 10% 5% 20% 5% 20% 5% 20% 5% 10%;
+                display: grid;
+                text-align: center;
+            }
+            .subpage1
+            {
+                height: 150px;
+                width: 150px;
+                font-size: 20px;
+                font-family: tahoma;
+            }
+            .subpage2
+            {
+                width: 150px;
+                font-size: 20px;
+                font-family: tahoma;
+            }
+            .subpage3
+            {
+                width: 150px;
+                font-size: 20px;
+                font-family: tahoma;
+            }
+            .subpage4
+            {
+                width: 150px;
+                font-size: 20px;
+                font-family: tahoma;
+            }
+            #chart1
+            {
+                width: 80%;
+            }
+            .title
+            {
+                font-size: 75px;
+            }
+    </style>
+    <body>
+        <h1>Nutrition</h1>
+        <h1 class="title">Average Weight for Kids Aged 1-18</h1>
+        <canvas id="chart1"></canvas>
+        <div class="buttoncontainer">
+            <div></div>
+            <button class="subpage1">
+                <a href="goodhealthandwellbeing.html">Home Page</a>
+            </button>
+            <div></div>
+            <button class="subpage2">
+                <a href="subpage1.html">What is Good Health and Wellbeing?</a>
+            </button>
+            <div></div>
+            <button class="subpage3">
+                <a href="subpage2.html">Physical Education</a>
+            </button>
+            <div></div>
+            <button class="subpage4">
+                <a href="subpage4.html">Charities & Extra Information</a>
+            </button>
+        </div>
+        <script>
+            xValues = [1,2,3,4,6,8,10,12,14,16,18];
+            femaleweight = [29,33.5,37,39.5,45.5,51.5,54.5,59.5,63.5,64,64];
+            maleweight = [30,34.5,38,40,45.5,51.5,54.5,59,64.5,68,69.5]
+
+            new Chart("chart1", 
+            {
+                type: "line",
+                data: 
+                {
+                    labels: xValues,
+                    datasets: 
+                    [{
+                        label: "Female",
+                        fill: false,
+                        lineTension: 0,
+                        backgroundColor: "rgba(255,0,0)",
+                        borderColor: "rgba(255,0,0)",
+                        data: femaleweight
+                    },
+                    {
+                        label: "Male",
+                        fill: false,
+                        lineTension: 0,
+                        backgroundColor: "rgb(0,0,255)",
+                        borderColor: "rgb(0,0,255)",
+                        data: maleweight
+                    }]
+                },
+                options: 
+                {
+                    legend: 
+                    {
+                        display: true,
+                        position: "right"
+                    },
+                    scales: 
+                    {
+                        yAxes: 
+                        [{
+                            scaleLabel: {display: true,labelString: 'Weight (Pounds)'}
+                        }],
+                        xAxes: 
+                        [{
+                            scaleLabel: {display: true,labelString: 'Age'}
+                        }]
+                    },
+                    title: 
+                    {
+                        display: true,
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
